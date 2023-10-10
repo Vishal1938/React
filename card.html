@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JSX Introduction</title>
+    <!-- Use the correct versions of React and ReactDOM -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Include Babel for JSX transpilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // Define your component function
+      function createCard() {
+        var cardStyle = {
+          width: "300px",
+          height: "450px",
+          display: "flex",
+          flexDirection: "column",
+          boxShadow: "0 0 10px black",
+          margin: "50px auto",
+          padding: "10px",
+          borderRadius: "5px",
+          backgroundColor:"#B2EBF2",
+        };
+
+        var h3Style = {
+          textAlign: "center",
+          textDecoration: "solid",
+          fontWeight: "bold",
+          margin: " 10px 0px",
+        };
+
+        var buttonStyle = {
+          margin: "20px auto",
+          color: "antiquewhite",
+          backgroundColor: "brown", // Correct the attribute name
+          borderRadius: "5px",
+          padding: "5px",
+        };
+
+        var pStyle={
+            marging:"5px 5px",
+            color:"blue"
+        }
+
+        return (
+          <div style={cardStyle}>
+            <img
+              src="https://i.pinimg.com/originals/e3/7e/0e/e37e0e25686c2139b281a57a5b4906f2.jpg"
+              width="100%"
+              height="250"
+            />
+            <h3 style={h3Style}>Vishal Singh</h3>
+            <p style={pStyle}>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Quisquam eveniet voluptas harum possimus animi amet dolores deleniti
+              veniam. At, possimus.
+            </p>
+            <button style={buttonStyle}>Profile Details</button>
+          </div>
+        );
+      }
+
+      // Render the component to the "root" element
+      ReactDOM.render(createCard(), document.getElementById("root"));
+    </script>
+  </body>
+</html>
